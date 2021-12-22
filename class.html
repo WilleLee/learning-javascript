@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    'use strict';
+
+    //a class = a template
+    //an object = an instance of a class
+
+    class Person {
+      constructor (a, b) {
+        this.name = a;
+        this.age = b;
+      }
+      greeting () {
+        console.log(`hello, ${this.name}`);
+      }
+    }
+
+    //getter and setter
+    class Registration {
+      constructor (firstName, lastName, division, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.division = division;
+        this.age = age;
+      }
+
+      get division () { // function to return a dynamically computed value
+        return this.division_set
+      }
+      set division (value) { // to create a pseudo-property
+        if ( (value === 'front-end') || (value === 'back-end') || (value === 'web-publishing') ) {
+          this.division_set = value;
+        } else {
+          this.division_set = undefined;
+        }
+      }
+
+      get age () {
+        return this.age_set;
+      }
+      set age (value) {
+        if (value > 0) {
+          this.age_set = value;
+        } else {
+          this.age_set = undefined;
+        }
+      }
+    }
+    
+
+    const registration1 = new Registration ('Wille', 'Spanks', 'sdhds', -2);
+    console.log(registration1.division);
+    console.log(registration1.age);
+
+    const registration2 = new Registration ('Orange', 'Ryan', 'front-end', 28);
+    console.log(registration2.division);
+    console.log(registration2.age);
+
+
+    //
+
+
+    //extends : to create a class that is a child of another class
+    class Shape {
+      constructor (w, h, c) {
+        this.width = w;
+        this.height = h;
+        this.color = c;
+      }
+      callColor () {
+        console.log(`drown in ${this.color}`);
+      }
+      getArea () {
+        return this.width*this.height;
+      }
+    }
+
+    class Rectangle extends Shape {}
+
+    const rectangle = new Rectangle (20, 20, 'blue');
+    rectangle.callColor();
+    console.log(rectangle.getArea());
+
+    class Triangle extends Shape {
+      getArea () {
+        return (this.width*this.height)/2; //필요한 함수만 overwriting 가능!
+      }
+    }
+    const triangle = new Triangle (20, 20, 'red');
+    triangle.callColor();
+    console.log(triangle.getArea());
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

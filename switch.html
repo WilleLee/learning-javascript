@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>fresh fruits</h1>
+  <script>
+    /*
+    const expr = prompt('what do you want?');
+    console.log(expr);
+
+    switch (expr) {
+      case 'Orange':
+      case 'Oranges':
+      case 'orange':
+      case 'oranges':
+        console.log('Oranges are $0.59 a pound.');
+        break;
+      
+      case 'Mango':
+      case 'Mangos':
+      case 'mango':
+      case 'mangos':
+        console.log('Mangos are $2.10 a pound.');
+        break;
+
+      default: //If no matching case clause is found, the program looks for the optional default clause
+        console.log('What u said?');
+    }
+
+    //If multiple cases match the provided value, the first case that matches is selected, even if the cases are not equal to each other.
+    */
+    const hello = 'hello!';
+    switch (hello) {
+      case 'hello!': { // block-scope variables within switch statements
+        let greeting = 'hello?';
+        console.log(greeting);
+        break;
+      }
+      case 'hi!': {
+        let greeting = 'hi?';
+        console.log(greeting);
+        break;
+      }
+      default: {
+        console.log('huh?');
+        break;
+      }
+   }
+   console.log('...');
+   function varTest() {
+      var x = 1;
+      {
+        var x = 2;  // same variable! : 값에 영향을 줌
+        console.log(x);  // 2
+      }
+      console.log(x);  // 2
+    }
+    varTest();
+
+    function letTest() {
+      let x = 1;
+      {
+        let x = 2;  // different variable : 값에 영향을 주지 않음
+        console.log(x);  // 2
+      }
+      console.log(x);  // 1
+    }
+    letTest();
+
+
+    console.log('...');
+    let counter =3;
+    const preIncrement = ++counter;
+    console.log(`preIncrement: ${preIncrement}, counter: ${counter}`); //1을 더한 후 값을 반환
+    const postIncrement = counter++;
+    console.log(`postIncrement: ${postIncrement}, counter: ${counter}`); //값을 반환한 후 1을 더함
+  </script>
+</body>
+</html>
