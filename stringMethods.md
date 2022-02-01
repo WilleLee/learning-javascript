@@ -120,4 +120,87 @@ number parameter를 추가하여 문자 값을 확인하고자 하는 지점을 
 
 ---
 
-regular expression 선행 학습 필요... 뿡
+### [String.prototype.padEnd()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd, "browse mdn references")
+
+String이 입력한 값만큼의 길이를 갖도록 기존 String의 뒤에 공백 또는 원하는 값을 덧붙인다. 두 번째 parameter가 없을 때에는 공백을 추가하고, 있을 때에는 그 값을 길이에 도달할 때까지 반복한다.
+
+#### Syntax
+
+`String.prototype.padEnd(원하는길이) // 공백을 반복`
+
+`String.prototype.padEnd(원하는길이, 반복하고싶은것)`
+
+#### Examples
+
+`console.log(sentence.padEnd(7)); // expected output = 'abcde  '`
+
+`console.log(sentence.padEnd(7, '.')); // expected output = 'abcde..'`
+
+---
+
+### [String.prototype.padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart, "browse mdn references")
+
+String이 입력한 값만큼의 길이를 갖도록 기존 String의 앞에 공백 또는 원하는 값을 덧붙인다. 두 번째 parameter가 없을 때에는 공백을 추가하고, 있을 때에는 그 값을 길이에 도달할 때까지 반복한다.
+
+#### Syntax
+
+`String.prototype.padStart(원하는길이) // 공백을 반복`
+
+`String.prototype.padStart(원하는길이, 반복하고싶은것)`
+
+#### Examples
+
+`console.log(sentence.padStart(7)); // expected output = '  abcde'`
+
+`console.log(sentence.padStart(7, '*')); // expected output = '**abcde'`
+
+`let strStart1 = '23keh44hi5';`
+
+`let strStart2 = strStart1.slice(-4); // '4hi5'`
+
+`console.log(strStart2.padStart(strStart1.length, '*')); // '******4hi5'`
+
+---
+
+### [String.prototype.repeat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat, "browse mdn references")
+
+String을 입력한 값 만큼 반복한다.
+
+#### Examples
+
+`console.log('abc'.repeat(3)); // expected output = 'abcabcabc'`
+
+---
+
+### [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace, "browse mdn references")
+
+String의 일부 혹은 특정 regular expression에 match되는 부분을 다른 substring으로 대체(replace)한다. 기존 String은 변화하지 않는다.
+
+> 자세한 부분 다시 읽어보기
+
+#### Examples
+
+`console.log('I fucking love cakes.'.replace(cakes, carrots)); // expected output = 'I fucking love carrots'`
+
+---
+
+### [String.prototype.replaceAll()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll, "browse mdn references")
+
+String의 일부 혹은 특정 regular expression에 match되는 부분을 **모두** 다른 substring으로 대체(replace)한다. 기존 String은 변화하지 않는다.
+
+#### Examples
+
+`console.log('I fucking love cakes. He sells one of the best cakes in the world.'.replace('cakes', 'desserts')); // expected output = 'I fucking love desserts. He sells one of the best cakes in the world.'`
+
+`console.log('I fucking love cakes. He sells one of the best cakes in the world.'.replaceAll('cakes', 'desserts')); // expected output = 'I fucking love desserts. He sells one of the best desserts in the world.'`
+
+---
+
+### [String.prototype.search()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search, "browse mdn references")
+
+주어진 String에 대해 특정 regular expression 또는 다른 String과 일치하는 부분이 있으면 그 index 값을, 없으면 -1을 return한다.
+
+#### Syntax
+
+`String.prototype.search(regularExpression)`
+
