@@ -204,3 +204,29 @@ String의 일부 혹은 특정 regular expression에 match되는 부분을 **모
 
 `String.prototype.search(regularExpression)`
 
+#### Examples
+
+> regular expression 공부하자
+
+---
+
+### [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice, "browse mdn references")
+
+어떤 String으로부터 특정한 부분을 떼어내 return 한다. 이때 기존 String은 변화하지 않는다. 
+두 번째 parameter를 추가할 수 있는데, 이는 끝낼 index가 아니라, 끝낼 index의 다음 index 번호이다. 
+음수 parameter는 String의 마지막부터 세어 자른다.
+
+#### Syntax
+
+`String.prototype.slice(시작index)`
+
+`String.prototype.slice(시작index, 끝낼index의다음index)`
+
+#### Examples
+
+`console.log('I love you.'.slice(2)); // expected output = 'love you.'`
+
+`console.log('I love you.'.slice(2, 6)); // expected output = 'love'`
+
+`console.log('I love you.'.slice(-4, -1)); // expected output = 'you'`
+
