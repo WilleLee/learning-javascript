@@ -2,7 +2,7 @@
 
 ### [String.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/at, "browse mdn references")
 
-주어진 String의 특정 정수 번째 문자를 반환한다. 양의 정수, 음의 정수 또는 0 모두 value로 받을 수 있는데, 음의 정수의 경우 String의 마지막 index 문자에서부터 세어나간다. 
+주어진 String의 특정 정수 번째 문자를 반환한다. 양의 정수, 음의 정수 또는 0 모두 parameter로 받을 수 있는데, 음의 정수의 경우 String의 마지막 index 문자에서부터 세어나간다. 
 (ex. String.at(-1)인 경우 String의 마지막 문자를 반환함.)
 
 `let sentence = 'abcde'`
@@ -15,11 +15,11 @@
 
 ### [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt, "browse mdn references")
 
-String.at()과 쓰임새는 같으나, 0부터 String.length - 1 사이의 값만 value로 받을 수 있고, default value는 0이다.
+String.at()과 쓰임새는 같으나, 0부터 String.length - 1 사이의 값만 parameter로 받을 수 있고, default는 0이다.
 
-`console.log(sentence.chatAt(2)); // expected output = 'c'`
+`console.log(sentence.charAt(2)); // expected output = 'c'`
 
-`console.log(sentence.chatAt()); // expected output = 'a'`
+`console.log(sentence.charAt()); // expected output = 'a'`
 
 ---
 
