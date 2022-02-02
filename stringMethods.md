@@ -41,11 +41,27 @@ String의 특정 번째 문자의 0과 65535 사이 코드 값을 반환한다. 
 
 ---
 
+### [String.prototype.startsWith()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith, "browse mdn references")
+
+한 String이 특정 String의 문자(들)로 시작하는지 아닌지 판별하여 boolean value(true or false)를 반환한다. 
+두 번째 parameter로 index 값을 주어 starting substring의 값을 확인할 부분의 시작지점을 지정할 수 있다. 
+(ex. string.startsWith('...', 3)인 경우 String이 3번째 자리에서 '...'이라는 substring으로 시작하는지 true or false로 판별) 
+Default 값은 0이다.
+
+#### Examples
+
+`console.log(sentence.startsWith('b',1)); // expected output = true`
+
+`console.log(sentence.startsWith('a')); // expected output = true`
+
+---
+
 ### [String.prototype.endsWith()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith, "browse mdn references")
 
 한 String이 특정 String의 문자(들)로 끝을 맺는지 아닌지 판별하여 boolean value(true or false)를 반환한다. 
-number parameter를 추가하여 문자 값을 확인하고자 하는 지점을 String의 길이로 지정할 수 있다. 
-(ex. string.endsWith('...', 3)인 경우 문자열 string을 앞에서부터 3 만큼의 길이로 잘랐을 때의 마지막 문자가 '...'인지를 판별)
+두 번째 parameter로 string.length를 주어 String을 해당 길이로 잘랐을 때의 마지막 부분을 확인할 수 있도록 지정할 수 있다.
+
+#### Examples
 
 `console.log(sentence.endsWith('de', 5)); // expected output = true`
 
@@ -230,3 +246,86 @@ String의 일부 혹은 특정 regular expression에 match되는 부분을 **모
 
 `console.log('I love you.'.slice(-4, -1)); // expected output = 'you'`
 
+### [String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring, "browse mdn references")
+
+한 string의 일부 substring을 return 한다. 시작 부분 index를 첫 번째 parameter로 갖고, 잘라낼 부분의 첫 번째 index를 두 번째 parameter로 추가할 수 있다.
+
+#### Examples
+
+`console.log('I love you.'.substring(2)); // expected output = 'love you.'`
+
+`console.log('I love you.'.substring(2, 6)); // expected output = 'love'`
+
+### Differences between substring() and slice()
+
+둘은 거의 동일하다고 봐야 하지만 몇 가지 차이가 있다.
+
+1. primary parameter > secondary parameter일 때 substring은 두 값을 서로 바꾸어 정상적으로 값을 return하지만, slice는 빈 string을 return한다.
+
+`console.log(sentence.substring(4,1)); // expected output = 'bcd'`
+
+`console.log(sentence.slice(4,1)); // expeted output = ''`
+
+2. parameter가 음수일 때 substring은 parameter 값을 0으로 인식하는 한편, slice는 string의 마지막 index부터 세어 값을 return 한다.
+
+`console.log(sentence.substring(-3,-1)); // expected output = ''`
+
+`console.log(sentence.substring(-3,-1)); // expected output = 'cd'`
+
+---
+
+### [String.prototype.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split, "browse mdn references")
+
+한 String을 특정 부분(a substring or a regular expression) 기준으로 나누어 array로 return 한다. 분할 기준에 대한 값(primary parameter)이 없으면 String 전체를 하나의 array로 반환한다. 음이 아닌 정수의 두 번째 parameter를 주어 returned array에 포함할 index 수를 제한할 수 있다.
+
+#### Examples
+
+`console.log('abceabceabceabc'.split('e')); // expected output = ['abc','abc','abc','abc']`
+
+`console.log('abceabceabceabc'.split('e',2)); // expected output = ['abc','abc']`
+
+`console.log('abceabceabceabc'.split()); // expected output = ['abceabceabceabc']`
+
+---
+
+### [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase, "browse mdn references")
+
+주어진 String을 소문자 형태로 return 한다.
+
+#### Examples
+
+`console.log('A Fox'.toLowerCase()); // expected output = 'a fox'`
+
+---
+
+### [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase, "browse mdn references")
+
+주어진 String을 대문자 형태로 return 한다.
+
+#### Examples
+
+`console.log('a fox'.toUpperCase()); // expected output = 'A FOX'`
+
+---
+
+### [String.prototype.trim()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim, "browse mdn references")
+
+양 끝의 whitespace를 제거하여 새로운 string을 return 한다. 이때 기존 String은 변형되지 않는다.
+
+`console.log('  tell me  '.trim()); // expected output = 'tell me'`
+
+### [String.prototype.trimStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart, "browse mdn references")
+
+시작부분의 whitespace를 제거한다.
+
+`console.log('  tell me  '.trimStart()); // expected output = 'tell me  '`
+
+### [String.prototype.trimEnd()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd, "browse mdn references")
+
+끝부분의 whitespace를 제거한다.
+
+`console.log('  tell me  '.trimEnd()); // expected output = '  tell me'`
+
+---
+
+valueOf, toString
