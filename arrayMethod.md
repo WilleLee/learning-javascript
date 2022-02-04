@@ -1,6 +1,6 @@
 ## Methods used for data type: Arrays
 
-### [Array.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at, "mdn references")
+### [Array.prototype.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at "mdn references")
 
 양/음의 정수 또는 0 value를 취해 해당 index의 item을 return 한다.
 
@@ -14,7 +14,7 @@
 
 ---
 
-### [Array.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat, "mdn references")
+### [Array.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat "mdn references")
 
 둘 이상의 arrays를 하나의 array로 합친다.
 
@@ -28,7 +28,7 @@
 
 ---
 
-### [Array.prototype.copyWithin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin, "mdn references")
+### [Array.prototype.copyWithin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin "mdn references")
 
 Array의 일정 부분을 다른 위치에 복붙한다. 이때 array의 길이는 변화하지 않는다.
 
@@ -50,7 +50,7 @@ Array의 일정 부분을 다른 위치에 복붙한다. 이때 array의 길이�
 
 ---
 
-### [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every, "mdn references")
+### [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every "mdn references")
 
 Callback function을 이용해 한 array의 모든 elements가 특정 조건을 통과하는지 여부를 판단하여 boolean value를 return 한다.
 
@@ -74,7 +74,7 @@ Callback function을 이용해 한 array의 모든 elements가 특정 조건을 
 
 ---
 
-### [Array.prototype.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill, "mdn references")
+### [Array.prototype.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill "mdn references")
 
 한 array를 고정된 value로 채워넣는다. 두 번째 parameter에 시작 index를(default = 0), 세 번째 parameter에 마지막 index를(default = array.length) 추가할 수 있다.
 
@@ -96,7 +96,7 @@ Callback function을 이용해 한 array의 모든 elements가 특정 조건을 
 
 ---
 
-### [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter, "mdn references")
+### [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter "mdn references")
 
 Callback function을 이용해 한 array에서 특정 조건을 통과한 elements로 새로운 array를 만든다.
 
@@ -118,3 +118,108 @@ Callback function을 이용해 한 array에서 특정 조건을 통과한 elemen
 
 ---
 
+### [Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find "mdn references")
+
+Callback function을 이용해 한 array에서 특정 조건을 통과하는 첫 번째 element의 **value**를 return 한다.
+
+#### Syntax
+
+`Array.prototype.find(callbackFn(element){ /* ... */ })`
+
+`Array.prototype.find(callbackFn(element, index){ /* ... */ })`
+
+`Array.prototype.find(callbackFn(element, index, array){ /* ... */ })`
+
+#### Examples
+
+`let arrayToFind = [1, 46, 2, 8, 93];`
+
+`console.log(arrayToFind.find( (element)=>{ return element >= 10 } )); // expected output = 46`
+
+---
+
+### [Array.prototype.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex "mdn references")
+
+Callback function을 이용해 한 array에서 특정 조건을 통과하는 첫 번째 element의 **index**를 return 한다.
+
+#### Examples
+
+`console.log(arrayToFind.findIndex( (element)=>{ return element >= 10 } )); // expected output = 1`
+
+---
+
+### [Array.prototype.flat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat "mdn references")
+
+모든 sub-array가 통합된 하나의 새로운 array를 만든다. Parameter로 depth를 설정할 수 있으며 default = 1이다.
+
+#### Examples
+
+`let arrayToFlat = [1,2,3,[4,[5,6]]];`
+
+`console.log( arrayToFlat.flat() ); // expected output = [1,2,3,4,[5,6]];`
+
+`console.log( arrayToFlat.flat(2) ); // expected output = [1,2,3,4,5,6];`
+
+---
+
+### [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map "mdn references")
+
+어떤 array의 모든 elements에 대해 특정한 function을 실행하여 새로운 array를 만든다.
+
+#### Syntax
+
+`Array.prototype.map( (element[, index, array] )=>{/* ... */} )`
+
+#### Examples
+
+`let arrayToMap = [1,2,3,4,5];`
+
+`console.log(arrayToMap.map((element)=>{ return element*2 })); // expected output = [2,4,6,8,10]`
+
+---
+
+### [Array.prototype.flatMap()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap "mdn references")
+
+한 array의 모든 elements에 특정 callback function을 실행하여 새로운 array를 만든 후 depth 1의 flat() method를 실행한다. 이는 map() method를 실행한 후 flat() method를 실행하는 것과 동일하다.
+
+통상적으로 flatMap() method는 불필요한 arrays를 일시적으로 생성한다는 점에서 for-loop보다 느리다.
+
+#### Syntax
+
+`Array.prototype.flatMap( callbackFn( currentValue[, index, array] ){ /* ... */ } )`
+
+#### Examples
+
+`let arrayToFlatMap = [ "You have chosen", "this item", "into the cart." ];`
+
+`let arrayAfterMapOnly = arrayToFlatMap.map( a=> a.split(" ") );`
+
+`console.log(arrayAfterMapOnly); // expected output = [ ["You", "have", "chosen"], ["this", "item"], ["into", "the", "cart."] ]`
+
+`let arrayAfterFlatMap = arrayToFlatMap.flatMap( (a)=>{ a.split(" ") } );`
+
+`console.log(arrayAfteFlatMap); // expected output = [ "You", "have", "chosen", "this", "item", "into", "the", "cart." ]`
+
+---
+
+### [Array.prototype.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach "mdn references")
+
+한 array의 elements 각각에 특정 callback function을 실행한다.
+
+#### Syntax
+
+`Array.prototype.forEach((element[, index, array])=>{/* ... */})`
+
+#### Examples
+
+`let originalForEach = ['item1','item2','item3']`
+
+`let copyForEach = [];`
+
+`originalForEach.forEach( (element)=>{ copyForEach.push(element) } );`
+
+`console.log(copyForEach); // expected output = ['item1','item2','item3']`
+
+This is identical to ...
+
+`for(let i = 0; i < originalForEach.length; i++){ copyForEach.push(originalForEach[i]) };`
