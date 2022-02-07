@@ -223,3 +223,152 @@ Callback function을 이용해 한 array에서 특정 조건을 통과하는 첫
 This is identical to ...
 
 `for(let i = 0; i < originalForEach.length; i++){ copyForEach.push(originalForEach[i]) };`
+
+---
+
+### [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from "mdn references")
+
+객체로부터 shallow-copied array를 만든다. 동시에 map function을 실행할 수 있다.
+
+#### Syntax
+
+`Array.from(arrayLike, mapFunction)`
+
+#### Examples
+
+`console.log(Array.from('cake')); expected output = ['c','a','k','e'];`
+
+`function arrayFrom(){ return Array.from(arguments, a => a*2) };`
+
+`console.log(arrayFrom(1,2,3)); // expected output = [2, 4, 6]`
+
+---
+
+### [Array.prototype.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes "mdn references")
+
+한 array가 특정 값을 포함하고 있는지 판별하여 a boolean value를 return한다.
+
+#### Examples
+
+`let arrayToInclude = ['pasta', 'pizza', 'chocolate', 'coffee', 'melon'];`
+
+`console.log(arrayToInclude.includes('pizza')); // true`
+
+`console.log(arrayToInclude.includes('cakes')); // false`
+
+---
+
+### [Array.prototype.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf "mdn references")
+
+한 array에서 특정 value가 처음 element로 등장하는 index value를 return 한다. 발견되지 않을 시 -1을 return 한다. Search를 시작할 index 번호를 두 번째 parameter로 추가할 수 있다.
+
+#### Examples
+
+`console.log(arrayToInclude.indexOf('coffee')); // expected output = 3`
+
+---
+
+### [Array.protytpe.lastIndexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf "mdn references")
+
+한 array에서 특정 value가 등장하는 마지막 index 값을 return 하고, 존재하지 않을 때에는 -1을 return 한다. Array의 마지막 index에서부터 search를 시작하며, fromIndex로 search를 시작할 index를 설정할 수 있다.
+
+#### Syntax
+
+`Array.prototype.lastIndexOf(searchElement);`
+
+`Array.prototype.lastIndexOf(searchElement, fromIndex);`
+
+#### Examples
+
+`let arrayToLastIndex = ['berries', 'cakes', 'iPads', 'coffee', 'cakes', 'shoes'];`
+
+`console.log(arrayToLastIndex.lastIndexOf('cakes')); // expected output = 4`
+
+`console.log(arrayToLastIndex.lastIndexOf('cakes', 3)); // expected output = 1`
+
+---
+
+### [Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray "mdn references")
+
+주어진 value가 array인지 판별하여 a boolean value를 return한다.
+
+#### Examples
+
+`console.log(Array.isArray([1,2,3])); // true`
+
+`console.log(Array.isArray({me : 'cake'})); // false`
+
+---
+
+### [Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join "mdn references")
+
+한 array 안의 모든 elements들을 comma, 또는 지정한 문자(separator)로 구분되는 하나의 string으로 return 한다.
+
+#### Syntax
+
+`Array.prototype.join();`
+
+`Array.prototype.join(separator : string)`
+
+#### Examples
+
+`['coffee', 'cake', 'berries'].join(); // expected output = 'coffee,cake,berries'`
+
+`['coffee', 'cake', 'berries'].join('-'); // expected output = 'coffee-cake-berries'`
+
+---
+
+### [Array.of()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of "mdn references")
+
+여러 elements로 이루어진 새로운 array를 만든다. 정수 사용 방식에서 Array() method와 구별되는데, Array.of(7)은 7이라는 하나의 element를 갖는 array를 만드는 한편, Array(7)은 길이가 7인 빈 array를 만든다.
+
+#### Syntax
+
+`Array.of(element0, element1, /* ... */ elementN);`
+
+#### Examples
+
+`let arrayOf = Array.of(0,1,'cakes',3);`
+
+`console.log(arrayof); // expected output = [0, 1, 'cakes', 3]`
+
+`console.log(Array.of(3)); // [3]`
+
+`console.log(Array(3)); // [ empty * 3 ]`
+
+---
+
+###  [Array.prototype.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop "mdn references")
+
+한 array의 마지막 element를 제거하여 그 값을 return한다. 이때 기존 array의 길이는 짧아진다.
+
+#### Examples
+
+`let arrayToPop = ['cakes', 'berries', 'coffee'];`
+
+`let popped = arrayToPop.pop();`
+
+`console.log(popped); // expected output = 'coffee'`
+
+`console.log(arrayToPop); // expected output = ['cakes', 'berries']`
+
+---
+
+### [Array.prototype.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push "mdn references")
+
+하나 또는 여러 elements를 array의 뒤쪽에 추가하여 return 한다.
+
+#### Syntax
+
+`Array.push(element0, element1, /* ... */ elementN);`
+
+#### Examples
+
+`let arrayToPush = ['iPads', 'iPhones', 'apple watch'];`
+
+`arrayToPush.push('mac book', 'iMac');`
+
+`console.log(arrayToPush); // expected output = ['iPads', 'iPhones', 'apple watch', 'mac book', 'iMac']`
+
+---
+
