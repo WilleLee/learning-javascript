@@ -422,3 +422,21 @@ This is identical to ...
 
 ---
 
+### [Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some "mdn references")
+
+한 array에서 어떤 callback function의 조건을 만족하는 element가 존재하는지 판별하여 a boolean value를 return한다.
+
+#### Syntax
+
+`Array.prototype.some(callbackFn(element[, index, array]){/* ... */});`
+
+#### Examples
+
+`let arrayToSome = [1,2,10,4,5];`
+
+`console.log(arrayToSome.some( a => a >= 10 )); // expected output = true`
+
+`console.log(arrayToSome.some( a => a > 10 )); // expected output = false`
+
+---
+
