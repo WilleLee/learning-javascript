@@ -338,9 +338,25 @@ This is identical to ...
 
 ---
 
-###  [Array.prototype.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop "mdn references")
+### [Array.prototype.shift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift "mdn references")
 
-한 array의 마지막 element를 제거하여 그 값을 return한다. 이때 기존 array의 길이는 짧아진다.
+한 array의 첫 번째 element를 제거하여 그 값을 return한다. 이때 기존 array의 길이도 변화한다.
+
+#### Examples
+
+`let arrayToShift = ['cakes', 'berries', 'coffee'];`
+
+`let shifted = arrayToShift.shift();`
+
+`console.log(shifted); // expected output = 'cakes'`
+
+`console.log(arrayToShift); // expected output = ['berries', 'coffee']`
+
+---
+
+### [Array.prototype.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop "mdn references")
+
+한 array의 마지막 element를 제거하여 그 값을 return한다. 이때 기존 array의 길이도 변화한다.
 
 #### Examples
 
@@ -369,6 +385,40 @@ This is identical to ...
 `arrayToPush.push('mac book', 'iMac');`
 
 `console.log(arrayToPush); // expected output = ['iPads', 'iPhones', 'apple watch', 'mac book', 'iMac']`
+
+---
+
+### [Array.prototype.reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse "mdn references")
+
+한 array의 순서를 in-place로 뒤집는다.
+
+#### Examples
+
+`console.log([1,2,3].reverse()); // expected output = [3,2,1]`
+
+---
+
+### [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice "mdn references")
+
+한 array를 shallow copy하여 return 한다. start index와 end index를 지정할 수 있다. start index가 주어지지 않을 때에는 index 0부터 shallow copy한다. 이때 기존 array를 변형시키진 않는다. 
+
+#### Syntax
+
+`Array.prototype.slice();`
+
+`Array.prototype.slice(start);`
+
+`Array.prototype.slice(start, end);`
+
+#### Examples
+
+`let vaccines = ['moderna', 'pfizer', 'astrazeneca'];`
+
+`console.log(vaccines.slice()); // expected output = ['moderna', 'pfizer', 'astrazeneca'];`
+
+`console.log(vaccines.slice(1)); // expected output = ['pfizer', 'astrazeneca'];`
+
+`console.log(vaccines.slice(1,2)); // expected output = ['pfizer'];`
 
 ---
 
