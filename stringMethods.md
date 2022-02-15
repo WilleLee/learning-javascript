@@ -196,7 +196,7 @@ String의 일부 혹은 특정 regular expression에 match되는 부분을 다�
 
 #### Examples
 
-`console.log('I fucking love cakes.'.replace(cakes, carrots)); // expected output = 'I fucking love carrots'`
+`console.log('I fucking love cakes.'.replace('cakes', 'carrots')); // expected output = 'I fucking love carrots'`
 
 ---
 
