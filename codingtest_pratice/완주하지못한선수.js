@@ -30,3 +30,16 @@ function solution2(participant, completion) {
 
   return loser;
 }
+
+//map을 사용한 풀이
+function solution3(participant, completion) {
+  const map = new Map();
+
+  for(let i = 0; i < participant.length; i++){
+    let a = participant[i],
+        b = participant[i];
+
+    map.set(a, (map.get(a) || 0) + 1);
+    map.set(b, (map.get(b) || 0) - 1);
+  }
+}
