@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue;
+}
+.middle {
+  background-color: violet;
+}
+.large {
+  background-color: orange;
+}
+
+h1 {
+  color: white;
+}
