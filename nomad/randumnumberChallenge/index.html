@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Random Number Game</h1>
+  <form class="game-form">
+    <div class="max-num-container">
+      <label for="max-num">Generate a number between 0 and </label>
+      <input
+        required
+        type="number"
+        name="max-num"
+        min="0"
+      />
+    </div>
+    <div class="answer-container">
+      <label for="answer-num">Guess the number: </label>
+      <input
+        required
+        type="number"
+        name="answer-num"
+        min="0"
+      />
+      <button type="submit" class="play-btn">Play!</button>
+    </div>
+    <div class="result-box hidden">
+      <p>You chose: <span class="result-guess"></span>, the machine chose: <span class="result-answer"></span>.</p>
+      <h3></h3>
+    </div>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>
