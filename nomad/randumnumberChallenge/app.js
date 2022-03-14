@@ -13,6 +13,7 @@ const LOST_TEXT = "You lost!";
 
 const handleGameSubmit = (event) => {
   event.preventDefault();
+  // had to apply the parseInt method on these, cause they(input.values) seemed to be treated as strings 
   const maxNum = parseInt(maxNumInput.value);
   const guess = parseInt(answerInput.value);
   const answer = Math.floor(Math.random() * (maxNum + 1));
